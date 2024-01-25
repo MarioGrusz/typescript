@@ -1,0 +1,26 @@
+TypeScript is a superset of JavaScript, meaning that every JavaScript code is a valid TypeScript code. 
+TypeScript adds type information on top of JavaScript code, allowing for more robust development 
+and better tooling support. However, browsers and Node.js environments can only execute JavaScript, 
+so before any TypeScript code is run in the browser, the information about types must be stripped out. 
+This is what the TypeScript compiler does.
+
+
+
+There are several scenarios where relying solely on TypeScript might not be the best choice:
+
+    Handling User Input: 
+    As previously discussed, TypeScript's static type checking isn't designed to handle user input validation directly. 
+    While TypeScript can help you catch potential errors in your code due to incorrect usage of types, 
+    it can't guarantee that user input will match the expected types.
+
+    Dealing with External Data: 
+    When working with external data sources, such as APIs, TypeScript's static type checking can be less effective. 
+    The data returned from an API might not always match the types defined in your TypeScript code, leading to runtime errors. 
+    In such cases, you would typically need to perform runtime validation of the data.
+
+    Dynamic Data Structures: 
+    TypeScript works well with structured data where the shape is known ahead of time. 
+    However, when dealing with dynamic data structures, such as nested objects or arrays, 
+    TypeScript's static type checking might not be sufficient. 
+    You may need to use type assertions or type guards to ensure the correct handling of the data.
+

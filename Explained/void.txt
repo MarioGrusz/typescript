@@ -1,0 +1,13 @@
+In TypeScript, void is a type that denotes the absence of any type. 
+It's commonly used to signify that a function doesn't return a value. 
+When a function doesn't return anything, it implicitly returns undefined in JavaScript. 
+TypeScript's void type is a more explicit way of expressing this.
+
+Here's a simple example:
+
+function sayHi(): void { 
+    console.log('Hi!')
+} 
+
+let speech: void = sayHi(); 
+console.log(speech); // Output: undefined

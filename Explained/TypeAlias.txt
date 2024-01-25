@@ -1,0 +1,4 @@
+In TypeScript, a type alias is a way to create a custom name for a type. 
+It allows you to define a new name for an existing type, making your code 
+more readable and expressive. Type aliases are often used to simplify 
+complex type definitions or to create reusable types.
