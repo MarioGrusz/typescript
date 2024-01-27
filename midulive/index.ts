@@ -23,24 +23,49 @@ function throwError (message: string) : never {
 }
 
 
+//Intersection Types
+type HeroId = `${string}-${string}-${string}-${string}-${string}-`
+type HeroPowerScale = 'local' | 'planetery' | 'galactic' | 'universal' | 'multiuniversal'
+
+
 //TYPES
 
-type Hero = {
-    readonly id?: number,
+type HeroBasicInfo = {
     name: string,
     age: number,
-    isActive?: boolean, //? means optional 
 }
+
+type HeroProperties = {
+    readonly id?: string,
+    isActive?: boolean, //? means optional 
+    powerScale?: HeroPowerScale
+}
+
+type Hero = HeroBasicInfo & HeroProperties
 
 let hero: Hero = {
     name: 'thor',
     age: 1500
 }
 
-function createHero(hero: Hero): Hero {
-    const { name, age } = hero
-    return { name, age, isActive: true }
+function createHero(input: HeroBasicInfo): Hero {
+    const { name, age } = input
+    return { 
+        id: crypto.randomUUID(), 
+        name, 
+        age, 
+        isActive: true 
+    }
 }
 
 const thor = createHero({name: 'Thor', age: 1500})
+thor.powerScale = 'planetery'
+
+//Arrays
+
+const languages: (string | number)[] = []
+
+languages.push('JavaScript')
+
+
 

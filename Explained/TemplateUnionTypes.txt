@@ -1,0 +1,20 @@
+Template Union Types in TypeScript are a powerful feature that allows you to create new types 
+by combining existing ones. They are built on top of string literal types and can expand into 
+many strings via unions. They have the same syntax as template literal strings in JavaScript.
+
+type World = "world";
+type Greeting = `hello ${World}`;
+// type Greeting = "hello world"
+
+
+When a union is used in the interpolated position, the type is the set of every possible 
+string literal that could be represented by each union member. 
+
+
+type EmailLocaleIDs = "welcome_email" | "email_heading";
+type FooterLocaleIDs = "footer_title" | "footer_sendoff";
+type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`;
+// type AllLocaleIDs = "welcome_email_id" | "email_heading_id" | "footer_title_id" | "footer_sendoff_id"
+
+
+type HexadecimalColor = `#${string}`
