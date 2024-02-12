@@ -1,0 +1,23 @@
+In TypeScript, an enum (short for "enumeration") is a data type that allows you to define a set of named constants. 
+Enums are useful when you have a fixed set of values that are logically related and you want to represent them 
+in a more readable and maintainable way.
+
+// Enum with explicitly assigned values
+enum Direction {
+    Up = "UP",
+    Down = "DOWN",
+    Left = "LEFT",
+    Right = "RIGHT"
+}
+
+
+// Defining an enum named Color
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+// Using the enum
+let myColor: Color = Color.Green;
+console.log(myColor); // Output: 1
