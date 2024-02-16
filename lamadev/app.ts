@@ -55,3 +55,79 @@ type UserType = {
 let betterFunc = (user : UserType) => {
     console.log(user.username)
 }
+
+
+//INTERFACES
+
+interface IUser {
+    username:string,
+    email:string;
+    age:number;
+}
+
+interface IEmployee extends IUser {
+    employeeId: number
+}
+
+const emp: IEmployee = {
+    username: 'tom',
+    email: 'tom@gmail.com',
+    age: 43,
+    employeeId: 1,
+}
+
+const client: IUser = {
+    username : 'tom',
+    email: 'tom@gmail.com',
+    age: 43,
+}
+
+//If you need to extend types use INTERFACES if not use TYPES
+
+
+//GENERICS
+
+interface IAuthor {
+    id: number,
+    username:string,
+}
+
+interface ICategory {
+    id: number,
+    title:string,
+}
+
+interface IPost {
+    id: number,
+    title: string,
+    desc: string,
+    extra: IAuthor[] | ICategory[]
+}
+
+interface IPostBetter<T> {
+    id: number,
+    title: string,
+    desc: string,
+    extra: T[]
+}
+
+const testMe : IPostBetter<String> = {
+    id: 1,
+    title: 'post title',
+    desc: 'post desc',
+    extra: ['str1', 'str2']
+}
+
+interface IPostEvenBetter <T extends object> {
+    id: 1,
+    title: 'post title',
+    desc: 'post desc',
+    extra: T[]
+}
+
+const testMe2 : IPostEvenBetter<IAuthor> = {
+    id: 1,
+    title: 'post title',
+    desc: 'post desc',
+    extra: [{id:1, username: 'tom'}]
+}
