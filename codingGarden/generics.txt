@@ -1,0 +1,48 @@
+Generics in TypeScript are a powerful feature that allows you to write 
+flexible and reusable code. They work by introducing placeholders 
+for types, which can be specified later when using the generic code. 
+This enables you to create functions, classes, and interfaces that 
+can work with a variety of data types without sacrificing type safety.
+
+GENERIC FUNCTION:
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let str = identity<string>("Hello");
+let num = identity<number>(10);
+
+
+GENERIC CLASS:
+
+class Pair<T, U> {
+  constructor(public first: T, public second: U) {}
+}
+
+let numberPair = new Pair<number, string>(1, "apple");
+let stringPair = new Pair<string, string>("hello", "world");
+
+
+GENERIC INTERFACE:
+
+interface Container<T> {
+  getItem(): T;
+  setItem(item: T): void;
+}
+
+class StringContainer implements Container<string> {
+  private data: string;
+
+  constructor(data: string) {
+    this.data = data;
+  }
+
+  getItem(): string {
+    return this.data;
+  }
+
+  setItem(item: string): void {
+    this.data = item;
+  }
+}

@@ -1,0 +1,49 @@
+ACCESS MODIFIRES
+
+Access modifiers in TypeScript are keywords used to control the visibility and accessibility 
+of a class's properties and methods. They enforce encapsulation, a fundamental 
+principle of object-oriented programming that promotes data protection and improves code maintainability.
+
+Here's a breakdown of the three core access modifiers in TypeScript:
+
+1. Public:
+
+    Definition: 
+    Members declared as public are accessible from anywhere in your program, 
+    including the class itself, other classes, and even outside of the current file.
+
+    Default: 
+    If you don't explicitly specify an access modifier for a property or 
+    method, it's considered public by default.
+
+    Use case: 
+    Use public for members that need to be interacted with from other parts of your code. 
+    For example, a class representing a Product might have a public name property to 
+    access the product's name from outside the class.
+
+2. Private:
+
+    Definition: Members declared as private are only accessible within the class where they are defined. 
+    They are hidden from other classes and cannot be accessed from outside the class.
+    Use case: Use private for internal implementation details that don't need to be exposed 
+    to other parts of the code. For instance, a class managing a user's login might have a 
+    private password property to store the password securely within the class.
+
+3. Protected:
+
+    Definition: Members declared as protected are accessible from within the class where they 
+    are defined and also from its subclasses (derived classes). They are essentially hidden 
+    from outside classes that are not part of the inheritance hierarchy.
+    Use case: Use protected for members that are meant to be used by the base class 
+    and its subclasses but should not be directly accessed from outside classes. 
+    For example, a base class Animal might have a protected makeSound() method 
+    that subclasses like Dog and Cat can implement to define their specific sounds.
+
+4. Static
+
+    In TypeScript, the static keyword is used to define static members within a class. 
+    These members are not associated with individual instances of the class, but rather 
+    belong to the class itself.
+    Use cases:
+    Utility functions: Static methods can be used to define helper functions that 
+    operate on the class itself or its data, without requiring object creation.
